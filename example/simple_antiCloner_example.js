@@ -44,11 +44,9 @@ function anticloner(API, room) {
     const runAntiCloner = () => {
         // get haxball room list
         Utils.getRoomList().then((list) => {
-            // ignore our own room
-            const roomsToCheck = list.filter(r => r.id !== roomId);
 
             // analyze all room list
-            const nearRooms = roomsToCheck.filter(r => isRoomNear(r, baseLat, baseLon));
+            const nearRooms = list.filter(r => r.id !== roomId && isRoomNear(r, baseLat, baseLon));
 
             if (nearRooms.length >= 1) {
                 // update new geo and apply it to the room
