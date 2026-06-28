@@ -7,6 +7,8 @@ As node.js has no native localStorage, we have to install
 and use a npm package called node-localstorage,
 a drop-in substitute for the browser native localStorage API that runs on node.js.
 
+./scrath is the location in which the local storage resides
+
 */
 const nh = require("../bridge"); // node-haxball-headless-wrapper
 var LocalStorage = require('node-localstorage').LocalStorage;
@@ -25,7 +27,8 @@ nh(({ HBInit, API }) => {
         console.log(link);
     }
 
-    room.onPlayerJoin = (link) => {
-        // whatever you want to do with localStorage when a player joins
+    room.onPlayerJoin = (playerObj) => {
+        localStorage.setItem("lastPlayer", playerObj.name);
+        console.log("Last player:", localStorage.getItem("lastPlayer"));
     }
 });

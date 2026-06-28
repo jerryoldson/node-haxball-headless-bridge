@@ -19,12 +19,7 @@ function welcomerPlugin(API) {
     const { AllowFlags, Plugin, Utils } = API;
 
     Object.setPrototypeOf(this, Plugin.prototype);
-    Plugin.call(this, 'welcomer', true, {
-        version: '0.1',
-        author: 'JerryOldson',
-        description: 'Welcomes everyone that joins.',
-        allowFlags: AllowFlags.CreateRoom,
-    });
+    Plugin.call(this, 'welcomer', true);
 
     const that = this;
 

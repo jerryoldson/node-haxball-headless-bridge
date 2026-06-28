@@ -1,6 +1,6 @@
 # node-haxball-headless-bridge
 
-A compatibility bridge for running bots originally written for **haxball.js** or **Haxball Headless** on **node-haxball** with minimal code changes.
+A compatibility bridge for running bots originally written for **haxball.js** or **Haxball Headless Host** ready to run directly with **node-haxball** with minimal code changes.
 
 Instead of rewriting your existing bot, `node-haxball-headless-bridge` exposes a familiar API while using `node-haxball` under the hood.
 
@@ -63,7 +63,7 @@ See the `examples/` directory for complete examples.
 
 ## Why use this?
 
-If you have an existing bot built with **haxball.js** or **Haxball Headless**, this package provides an easy migration path to **node-haxball**, allowing you to keep most of your existing code while taking advantage of `node-haxball`'s implementation.
+If you have an existing bot built with **haxball.js** or **Haxball Headless Host**, this package provides an easy migration path to **node-haxball**, allowing you to keep most of your existing code while taking advantage of `node-haxball`'s implementation.
 
 ## Accessing the native `node-haxball` room
 
@@ -73,11 +73,11 @@ Every room created through `HBInit` also exposes the underlying `node-haxball` r
 room.nhInstance
 ```
 
-This gives you direct access to the native `node-haxball` API whenever you need functionality that isn't available through the Headless-compatible interface.
+This gives you direct access to the `node-haxball` API functionalities such as native [callbacks](https://github.com/wxyz-abcd/node-haxball/wiki/uncategorized-commonEventCallbacks) (onCollisionDiscVsSegment, modifyPlayerData, onTeamColorsChange, etc), [methods](https://github.com/wxyz-abcd/node-haxball/wiki/interfaces-room) (setProperties, addIpBan, addAuthBan, etc), enums etc.
 
 ### ⚠️ Important
 
-`node-haxball-headless-bridge` relies on the Headless Wrapper to translate Headless callbacks into `node-haxball` events.
+`node-haxball-headless-bridge` relies on the [Headless Wrapper](https://github.com/wxyz-abcd/node-haxball/blob/main/src/headlessWrapper.js) to translate Headless callbacks into `node-haxball` events.
 
 Because of this, **do not replace the room configuration or assign native callbacks directly**.
 

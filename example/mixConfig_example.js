@@ -15,7 +15,7 @@ nh(({ HBInit, API }) => {
     // native node-haxball callbacks
     room.nhInstance.mixConfig({
         onPlayerJoin = (playerObj) => {
-            // whatever you want
+            console.log("player joined", playerObj.name);
         },
     })
 });
