@@ -1,0 +1,19 @@
+{
+  "name": "node-haxball-headless-bridge",
+  "version": "1.0.0",
+  "description": "node-haxball bridge for haxball.js and haxball headless",
+  "license": "ISC",
+  "author": "jerryoldson & abc",
+  "type": "commonjs",
+  "main": "bridge.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-haxball": "^2.3.0"
+  },
+  "devDependencies": {}
+}
