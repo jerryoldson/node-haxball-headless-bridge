@@ -102,7 +102,7 @@ Doing so may overwrite the callbacks installed by the Headless Wrapper, causing 
 
 ### Running native callbacks
 
-If you need to run callbacks that already exist in the underlying `RoomConfig`, use:
+If you need to run native callbacks that already exist in the underlying `RoomConfig`, use:
 
 ```js
 room.nhInstance.mixConfig({

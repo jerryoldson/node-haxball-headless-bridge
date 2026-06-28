@@ -1,4 +1,4 @@
-const nh = require("../bridge");
+const nh = require("../bridge"); // node-haxball-headless-wrapper
 
 nh(({ HBInit, API }) => {
 	const room = HBInit({
