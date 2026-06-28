@@ -100,19 +100,21 @@ room.nhInstance.onGameTick = ...;
 
 Doing so may overwrite the callbacks installed by the Headless Wrapper, causing Headless events to stop working correctly or behave unexpectedly.
 
-### Customizing native callbacks
+### Running native callbacks
 
-If you need to modify callbacks that already exist in the underlying `RoomConfig`, use:
+If you need to run callbacks that already exist in the underlying `RoomConfig`, use:
 
 ```js
 room.nhInstance.mixConfig({
-    // your modifications
+    // your callbacks
 });
 ```
 
-`mixConfig()` merges your changes with the existing configuration instead of replacing it, allowing the bridge and your code to coexist.
+`mixConfig()` does **not** replace existing callbacks. Instead, it appends your callback functions to the existing callback stack for each event. When that event is triggered, all registered callback functions are executed one after another.
 
-> **Warning:** `mixConfig()` is a **one-way operation**. Once a configuration has been mixed into the room, it **cannot be undone or removed**. Plan your configuration carefully before calling it.
+This allows your native `node-haxball` callbacks to coexist with the callbacks installed by `node-haxball-headless-bridge`.
+
+> **Warning:** `mixConfig()` is a **one-way operation**. Once a configuration has been mixed into the room, it **cannot be undone or removed**. Any callbacks added through `mixConfig()` will remain registered for the lifetime of that room.
 
 ## License
 
