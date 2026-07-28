@@ -1,6 +1,6 @@
 {
   "name": "node-haxball-headless-bridge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "node-haxball bridge for haxball.js and haxball headless",
   "license": "ISC",
   "author": "jerryoldson & abc",
