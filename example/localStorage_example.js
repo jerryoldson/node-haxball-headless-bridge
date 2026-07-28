@@ -10,7 +10,7 @@ a drop-in substitute for the browser native localStorage API that runs on node.j
 ./scrath is the location in which the local storage resides
 
 */
-const nh = require("../bridge"); // node-haxball-headless-wrapper
+const nh = require("node-haxball-headless-wrapper");
 var LocalStorage = require('node-localstorage').LocalStorage;
 localStorage = new LocalStorage('./scratch');
 
